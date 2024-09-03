@@ -1,21 +1,30 @@
 # cara Setup
 
+```json
 npm init
+```
 
 # Lalu tambahkan di file package.json
 
+```json
 "type":"module"
+```
 
 # lalu instalIl jest
 
+```json
 npm install --save-dev jest @types/jest
+```
 
 # lalu install babel
 
+```json
 npm install --save-dev babel-jest @babel/preset-env
+```
 
 # setup babel, ubah script pada bagian package.json
 
+```json
 
 "scripts": {
 "test": "jest"
@@ -26,31 +35,57 @@ npm install --save-dev babel-jest @babel/preset-env
 }
 }
 
+```
+
 # lalu buat file babel.config.json dan tambahkan kode di bawah
 
+```json
 {
 "presets": ["@babel/preset-env"]
 }
 
+```
 # lalu kita install typescript
+
+```json
 
 npm install --save-dev typescript
 
+```
+
 # tambahkan perintah untuk setting typescriptnya, dan membuat file konfigurasi
+
+```json
 
 npx tsc --init
 
+```
+
 # lalu setting tsconfig.json di bagian module menjadi
+```json
+
 "module": "ES6",
 
+```
+
 # setup jest Agar sopprt  typescript
+```json
+
 npm install --save-dev @babel/preset-typescript
+
+```
 
 # tambahkan ini ke dalam babel.config.json
 
+```json
+
 '@babel/preset-typescript',
 
+```
+
 # agar menjadi seperti ini
+
+```json
 
 {
      "presets": [
@@ -60,15 +95,20 @@ npm install --save-dev @babel/preset-typescript
      
 }
 
+```
 # lalu kita install ts-jest
 
+```json
 npm install --save-dev ts-jest
+```
 
 # terackhir install type defenition
 # agar bisa menggunakan type di typescript
-# type Person = {
+```ts
+export type Person = {
      name: string;
 }
+```
 
 ``
 npm install --save-dev @jest/globals
