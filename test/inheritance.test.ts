@@ -46,5 +46,7 @@ describe('Inheritance', function () {
           const shippingProduct = new Shipping(foodRepository.service, foodCategory.category)
 
           expect(shippingProduct.validateShippingOrder()).toBe(true)
+
+          console.info(shippingProduct.validateShippingOrder())
      });
 });
