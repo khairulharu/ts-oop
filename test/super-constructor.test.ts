@@ -16,6 +16,23 @@ describe('Super Constructor', function () {
           }
      }
 
+     class UserRepository {
+          serviceName: string;
+
+          constructor(serviceName: string) {
+               this.serviceName = serviceName
+          }
+     }
+
+     class CategoryRepository extends UserRepository {
+          categoryName: string;
+
+          constructor(serviceName: string, categoryName: string) {
+               super(serviceName)
+               this.categoryName = categoryName;
+          }
+     }
+
      it('should support super constructor', function () {
 
           const alok: Person = new Person("alok");
@@ -26,5 +43,14 @@ describe('Super Constructor', function () {
 
           console.info(layla.name);
           console.info(layla.departement);
+
+
+          const foodReposiory: UserRepository = new UserRepository("food");
+
+          const shippingRepository: CategoryRepository = new CategoryRepository("shipping", "food" );
+
+          console.info(shippingRepository.categoryName)
+          console.info(shippingRepository.serviceName)
+          console.info(foodReposiory.serviceName)
      });
 });
