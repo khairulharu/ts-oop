@@ -11,7 +11,11 @@ describe('Inheritance', function () {
           } 
      }
 
-     class Market extends Repository {}
+     class Market extends Repository {
+          getCategory(name: string): string {
+               return `Your service ${this.service}, We Found this ${name} from Market`
+          }
+     }
 
      class Shipping extends Market {}
 
@@ -31,5 +35,6 @@ describe('Inheritance', function () {
           console.info(shippingRepository.service);
           console.info(shippingRepository.getNameByUserId(7));
 
+          console.info(shippingRepository.getCategory("shoe"));
      });
 });
