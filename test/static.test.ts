@@ -15,12 +15,21 @@ describe('Static Class', function () {
                let total = 0;
 
                for (const value of values) {
-                    total += value;
+                    total += value + DatabaseConfiguration.DB_PORT;
                }
 
                return total;
           }
      }
+
+
+     class GetDatabaseConfigurationPort {
+          get(): number {
+               return DatabaseConfiguration.DB_PORT;
+          }
+     }
+
+
 
      it('should can support static method', function () {
 
@@ -33,6 +42,9 @@ describe('Static Class', function () {
      });
 
      it('should support static function', function () {
-          console.info(MathUtil.sum(0, 1, 2, 3))
+          console.info(MathUtil.sum(0, 1, 2, 3));
+
+          const databaseConfig = new GetDatabaseConfigurationPort();
+          console.info(databaseConfig.get())
      });
 });
